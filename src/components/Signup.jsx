@@ -1,0 +1,83 @@
+import { useState } from "react";
+import { useNavigate } from "react-router-dom";
+import { LOGIN } from "../utils/const";
+import { Link } from "react-router-dom";
+
+function Signup() {
+  const navigate = useNavigate();
+
+  const [email, setEmail] = useState("");
+  const [password, setPassword] = useState("");
+  const [error, setError] = useState("");
+
+  async function handleSubmit(e) {
+    e.preventDefault();
+
+    if (!email || !password) {
+      setError("Пожалуйста, заполните все поля");
+      return;
+    }
+
+    try {
+      const res = await fetch('http://localhost:3000/api/users', {
+        method: 'POST',
+        headers: { 'Content-Type': 'application/json' },
+        body: JSON.stringify({ email, password })
+      });
+
+      const data = await res.json();
+
+      if (!res.ok) {
+        setError(data.error || "Ошибка регистрации");
+        return;
+      }
+
+      alert("Регистрация прошла успешно! Теперь войдите в систему.");
+
+      setEmail("");
+      setPassword("");
+      setError("");
+
+      navigate(LOGIN);
+    } catch (err) {
+      setError("Ошибка подключения к серверу");
+    }
+  }
+
+  return (
+    <section className="login2">
+      <div className="form-container2">
+        <h2 className="form-title2">Signup</h2>
+
+        <h3 className="section-title2">Indicates required fields</h3>
+        {error && <p style={{ color: "red" }}>{error}</p>}
+
+        <form onSubmit={handleSubmit}>
+          <input
+            type="email"
+            className="input-field2"
+            placeholder="*email"
+            value={email}
+            onChange={e => setEmail(e.target.value)}
+            required
+          />
+          <input
+            type="password"
+            className="input-field2"
+            placeholder="*password"
+            value={password}
+            onChange={e => setPassword(e.target.value)}
+            required
+          />
+
+          <div className="loginniz">
+            <button type="submit" className="submit-btn2">Sign Up</button>
+            <Link to={LOGIN} className="signup">Login</Link>
+          </div>
+        </form>
+      </div>
+    </section>
+  );
+}
+
+export default Signup;

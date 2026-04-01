@@ -1,0 +1,48 @@
+*{
+  padding: 0;
+  margin: 0;
+}
+header {
+    font-size: 20px;
+    height: 73px;
+    display: flex;
+    justify-content: center; 
+    background: #DC2626;
+    padding: 1rem 2rem;
+    flex-direction: column-reverse;
+}
+
+.navbar {
+    display: flex;
+    justify-content: space-between;
+    align-items: center;
+    color: white;
+    font-family: 'Montserrat', sans-serif;
+}
+
+.logo {
+    font-size: 28px;
+    font-weight: bold;
+    text-decoration: none;
+    color: white;
+}
+
+.head{
+    color: white;
+    margin-right: 30px;
+}
+
+.headi{
+    margin-right: 24px;
+}
+
+.icons .icon {
+    margin-left: 1rem;
+    cursor: pointer;
+}
+
+@media (max-width: 720px) {
+  header nav {
+    display: none;
+  }
+}

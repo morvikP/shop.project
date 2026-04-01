@@ -1,0 +1,9 @@
+export const HOME = "/";
+export const CATALOGE = "/cataloge";
+export const CATEGORY = "/category";
+export const ITEM = "/item";
+export const CART = "/cart"
+export const CHECKOUT = "/checkout";
+export const LOGIN = "/login";
+export const SIGNUP = "/signup";
+export const FAVOURITE = "/favourite"

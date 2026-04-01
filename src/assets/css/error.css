@@ -1,0 +1,166 @@
+* {
+  padding: 0;
+  margin: 0;
+  box-sizing: border-box;
+}
+
+.error-page {
+  box-sizing: border-box;
+}
+
+.er {
+  position: relative;
+  height: 100svh;
+  background: #050505;
+  overflow: hidden;
+  font-family: "Montserrat", sans-serif;
+  color: #fff;
+  font-size: 18px;
+}
+
+.err {
+  position: absolute;
+  bottom: 0;
+  max-width: 1920px;
+  margin: 0 auto;
+  animation: catAnim 1.5s ease forwards;
+  animation-delay: 0.5s;
+}
+
+.err img {
+  display: flex;
+  width: 100%;
+  height: 100%;
+  object-fit: cover;
+}
+
+.okak {
+  position: absolute;
+  bottom: 150px;
+  left: 50%;
+  translate: -50% 0;
+  font-weight: 900;
+  font-size: 115px;
+}
+
+.error {
+  position: absolute;
+  top: 50%;
+  left: 50%;
+  font-size: 750px;
+  font-weight: 900;
+  transform: translate(-50%, 800px);
+  animation: errorAnim 1.5s ease forwards;
+  animation-delay: 0.5s;
+}
+
+@keyframes catAnim {
+  0% {
+    translate: 0 50%;
+  }
+  100% {
+    translate: 0 0;
+  }
+}
+
+@keyframes errorAnim {
+  100% {
+    transform: translate(-50%, -400px);
+  }
+}
+
+@media (min-width: 1921px) {
+  .er {
+    height: 100svh;
+  }
+
+  .error {
+    font-size: 900px;
+    transform: translate(-50%, 600px);
+  }
+
+  .okak {
+    font-size: 140px;
+    bottom: 220px;
+  }
+}
+
+@media (max-width: 1920px) {
+  .er {
+    height: 95svh;
+  }
+
+  .error {
+    font-size: 750px;
+    transform: translate(-50%, 600px);
+  }
+
+  .okak {
+    font-size: 115px;
+    bottom: 180px;
+  }
+}
+
+@media (max-width: 1599px) {
+  .er {
+    height: 90svh;
+  }
+
+  .error {
+    font-size: 600px;
+    transform: translate(-50%, 500px);
+  }
+
+  .okak {
+    font-size: 100px;
+    bottom: 150px;
+  }
+}
+
+@media (max-width: 1199px) {
+  .er {
+    height: 85svh;
+  }
+
+  .error {
+    font-size: 450px;
+    transform: translate(-50%, 400px);
+  }
+
+  .okak {
+    font-size: 80px;
+    bottom: 120px;
+  }
+}
+
+@media (max-width: 919px) {
+  .er {
+    height: 80svh;
+  }
+
+  .error {
+    font-size: 300px;
+    transform: translate(-50%, 300px);
+  }
+
+  .okak {
+    font-size: 60px;
+    bottom: 100px;
+  }
+}
+
+@media (max-width: 670px) {
+  .er {
+    height: 65svh;
+  }
+
+  .error {
+    font-size: 220px;
+    transform: translate(-50%, 200px);
+  }
+
+  .okak {
+    font-size: 50px;
+    bottom: 60px;
+  }
+}
